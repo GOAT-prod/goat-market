@@ -5,7 +5,6 @@ import { useMemo } from "react";
 
 export default function Home() {
   const products = useMemo(() => mockedProducts.items, []);
-  console.log(products);
   return (
     <Container>
       <main className='p-8'>
