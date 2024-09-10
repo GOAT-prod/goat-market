@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { Header } from "@/components/header/Header";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+
 import { cn } from "@/shared/lib/utils";
 
 import "./globals.css";
-import { AuthProvider } from "@/provider/AuthProvider";
+import { AuthProvider } from "@/providers/AuthProvider";
+import { ThemeProvider } from "@/providers/ThemeProviders";
+import { ModeToggle } from "@/components/toggleTheme/ToggleTheme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={cn(inter.className, "h-screen")}>
-        {/* <Header /> */}
-        <div className='h-full w-full'>
-          <AuthProvider>{children}</AuthProvider>
-        </div>
+      <body className={cn(GeistSans.className, "h-screen bg-background")}>
+        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem disableTransitionOnChange>
+          <div className='h-full w-full'>
+            <AuthProvider>{children}</AuthProvider>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

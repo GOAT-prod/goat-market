@@ -6,7 +6,7 @@ interface AuthProviderProps {
   children: React.ReactNode;
 }
 
-const isAuth = false;
+const isAuth = true;
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const router = useRouter();
