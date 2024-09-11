@@ -1,13 +1,19 @@
+import { Header } from "@/components/header/Header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Авторизация"
 };
 
-export default function HomeLayout({
+export default function ShopLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return (
+    <div>
+      <Header />
+      {children}
+    </div>
+  );
 }

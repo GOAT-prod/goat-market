@@ -10,7 +10,7 @@ export default async function Auth() {
       <div className='absolute right-6 top-1'>
         <ModeToggle />
       </div>
-      <div className='hover:border-border-hover flex gap-4 rounded-lg border-2 border-border bg-foreground p-6'>
+      <div className='flex gap-4 rounded-lg border-2 border-border bg-foreground p-6 hover:border-border-hover'>
         <AuthForm />
       </div>
     </div>

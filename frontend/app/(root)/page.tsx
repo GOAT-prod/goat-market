@@ -1,20 +1,18 @@
-import { Container } from "@/components/container/Container";
-import { mockedProducts } from "@/server/mocks/mockedProducts";
-import { Text } from "@/shared/ui/text";
-import { useMemo } from "react";
+import { AuthForm } from "@/components/login-form/LoginForm";
+import { ModeToggle } from "@/components/toggleTheme/ToggleTheme";
 
-export default function Home() {
-  const products = useMemo(() => mockedProducts.items, []);
+export default async function Home() {
   return (
-    <Container>
-      <main className='p-8'>
-        <div>
-          <Text variant={"h3"} className='mb-5 font-extrabold'>
-            {"Сотни товаров для вас"}
-          </Text>
-          {/* <ProductCard /> */}
-        </div>
-      </main>
-    </Container>
+    <div className='flex h-full flex-col items-center justify-center'>
+      <h1 className='absolute left-6 top-6 mb-6 text-2xl'>
+        <strong>goat</strong> <span className='font-light'>logistic</span>
+      </h1>
+      <div className='absolute right-6 top-1'>
+        <ModeToggle />
+      </div>
+      <div className='flex gap-4 rounded-lg border-2 border-border bg-foreground p-6 hover:border-border-hover'>
+        <AuthForm />
+      </div>
+    </div>
   );
 }
