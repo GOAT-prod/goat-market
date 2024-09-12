@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
-import { cn } from "@/shared/lib/utils";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProviders";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "goat logistic",

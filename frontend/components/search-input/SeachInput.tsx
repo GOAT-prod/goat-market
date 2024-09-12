@@ -1,9 +1,8 @@
-'use client';
-import { useState } from 'react';
-import { useClickOutside } from '@siberiacancode/reactuse';
-import { Icon20Search } from '@vkontakte/icons';
-
-import { cn } from '@/shared/lib/utils';
+"use client";
+import { useState } from "react";
+import { useClickOutside } from "@siberiacancode/reactuse";
+import { cn } from "@/lib/utils";
+// import { Icon20Search } from '@vkontakte/icons';
 
 interface SeachInputProps {
   className?: string;
@@ -20,14 +19,12 @@ export const SeachInput = ({ className }: SeachInputProps) => {
     <div
       ref={clickOutsideRef}
       className={cn(
-        `relative flex h-11 items-center gap-[10px] rounded-md border border-[#CBCBCB] px-[15px] py-[10px] ${focused ? 'border-transparent' : 'border-[#CBCBCB]'}`,
+        `relative flex h-11 items-center gap-[10px] rounded-md border border-[#CBCBCB] px-[15px] py-[10px] ${focused ? "border-transparent" : "border-[#CBCBCB]"}`,
         className
       )}
     >
       {/* TODO попробовать label и html for  */}
-      <label htmlFor='search-input'>
-        <Icon20Search />
-      </label>
+      <label htmlFor='search-input'>{/* <Icon20Search /> */}</label>
       <input
         className='w-full outline-none'
         placeholder='Поиск товаров'

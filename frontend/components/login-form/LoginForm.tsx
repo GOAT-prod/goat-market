@@ -1,13 +1,13 @@
 "use client";
-import { Button } from "@/shared/ui/button";
-import { Input } from "@/shared/ui/input";
-import { Label } from "@/shared/ui/label";
 
 import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { cn } from "@/shared/lib/utils";
 import next from "next";
 import { useRouter } from "next/navigation";
+import { Button } from "../ui/button";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { cn } from "@/lib/utils";
 
 const authFormConfig = {
   login: {
@@ -36,7 +36,7 @@ export const AuthForm = () => {
   };
 
   const onAuth = () => {
-    router.push("/shop");
+    // router.push("/shop");
   };
 
   return (
@@ -63,14 +63,7 @@ const LoginForm = ({ onChangeForm, onAuth }: LoginFormProps) => {
       <InputForm name='Email' type='email' placeholder='Введите почту' />
       <InputForm name='Пароль' type='password' placeholder='Введите пароль' className='mb-5' />
       <div className='flex flex-col gap-5'>
-        <Button
-          type='submit'
-          theme='secondary'
-          onClick={onAuth}
-          className='flex h-10 items-center px-4 py-0 hover:bg-[#1f1f1f]'
-        >
-          Войти
-        </Button>
+        <Button type='submit' variant={"secondary"} onClick={onAuth} text='Войти' />
         <a
           href='#'
           className='text-sm hover:underline'
@@ -91,25 +84,16 @@ const PersonForm = ({ onChangeForm }: LoginFormProps) => {
       <InputForm name='Пароль' type='password' placeholder='Введите пароль' className='mb-5' />
 
       <div className='flex w-full items-center justify-between'>
-        <Button
-          type='button'
-          onClick={() => onChangeForm("login")}
-          theme='secondary'
-          className='flex h-10 items-center px-4 py-0 hover:bg-[#1f1f1f]'
-        >
+        <Button type='button' onClick={() => onChangeForm("login")} variant={"secondary"}>
           <ArrowLeft size={20} />
         </Button>
         <Button
           type='button'
           onClick={() => onChangeForm("register_organization")}
-          theme='secondary'
-          className='flex h-10 w-[12.25rem] items-center px-4 py-0 hover:bg-[#1f1f1f]'
-        >
-          <div className='flex items-center gap-3'>
-            <p>Ваша организация</p>
-            <ArrowRight size={20} />
-          </div>
-        </Button>
+          variant={"secondary"}
+          text='Ваша организация'
+          suffix={<ArrowRight size={20} />}
+        />
       </div>
     </>
   );
@@ -132,23 +116,10 @@ const OrganizationForm = ({ onChangeForm }: LoginFormProps) => {
       />
 
       <div className='flex w-full items-center justify-between'>
-        <Button
-          type='button'
-          onClick={() => onChangeForm("register_person")}
-          theme='secondary'
-          className='flex h-10 items-center px-4 py-0 hover:bg-[#1f1f1f]'
-        >
+        <Button type='button' onClick={() => onChangeForm("register_person")} variant={"secondary"}>
           <ArrowLeft size={20} />
         </Button>
-        <Button
-          type='button'
-          theme='secondary'
-          className='flex h-10 w-[12.25rem] items-center px-4 py-0 hover:bg-[#1f1f1f]'
-        >
-          <div className='flex items-center gap-3'>
-            <p>Зарегистрироваться</p>
-          </div>
-        </Button>
+        <Button type='button' variant={"secondary"} text='Зарегистрироваться' />
       </div>
     </>
   );

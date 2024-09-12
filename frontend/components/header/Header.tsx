@@ -1,14 +1,10 @@
-import { Icon16LikeOutline, Icon16Place, Icon16ShoppingCartOutline } from "@vkontakte/icons";
 import Image from "next/image";
 import Link from "next/link";
 
-import { cn } from "@/shared/lib/utils";
-
-import { Avatar, AvatarImage } from "../../shared/ui/avatar";
-import { Button } from "../../shared/ui/button";
-import { Text } from "../../shared/ui/text";
 import { Container } from "../container/Container";
 import { SeachInput } from "../search-input/SeachInput";
+import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 interface HeaderProps {
   className?: string;
@@ -23,24 +19,24 @@ export const Header = ({ className }: HeaderProps) => {
           className='flex items-center gap-[10px] border-r border-r-[#CBCBCB] px-[40px] py-[23px]'
         >
           <Image src='/goat-market-logo.svg' alt='Логотип сайта' width={60} height={60} />
-          <Text className='whitespace-nowrap text-[26px]'>
+          <p className='whitespace-nowrap text-[26px]'>
             <strong>goat</strong> market.
-          </Text>
+          </p>
         </Link>
         <div className='flex flex-1 items-center justify-between gap-[30px] px-[35px] py-[32px]'>
           <SeachInput className='flex-1' />
           <div className='flex items-center gap-[30px]'>
-            <Button theme={"outline"} className='flex gap-[10px]'>
-              <Icon16Place />
-              <Text>Пенза</Text>
+            <Button variant={"outline"} className='flex gap-[10px]'>
+              {/* <Icon16Place /> */}
+              <p>Пенза</p>
             </Button>
             <Button className='flex gap-[10px]'>
-              <Icon16LikeOutline />
-              <Text>Избранное</Text>
+              {/* <Icon16LikeOutline /> */}
+              <p>Избранное</p>
             </Button>
             <Button className='flex gap-[10px]'>
-              <Icon16ShoppingCartOutline />
-              <Text>Корзина</Text>
+              {/* <Icon16ShoppingCartOutline /> */}
+              <p>Корзина</p>
             </Button>
             {/* <Avatar>
               <AvatarImage
