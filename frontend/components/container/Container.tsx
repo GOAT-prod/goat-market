@@ -1,5 +1,4 @@
-
-import { cn } from '@/shared/lib/utils';
+import { cn } from "@/lib/utils";
 
 interface ContainerProps {
   className?: string;
@@ -7,5 +6,5 @@ interface ContainerProps {
 }
 
 export const Container = ({ className, children }: ContainerProps) => {
-  return <div className={cn('mx-auto max-w-[1440px]', className)}>{children}</div>;
+  return <div className={cn("mx-auto max-w-[1440px]", className)}>{children}</div>;
 };
