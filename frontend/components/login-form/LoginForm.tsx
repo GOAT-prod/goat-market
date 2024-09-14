@@ -36,7 +36,7 @@ export const AuthForm = () => {
   };
 
   const onAuth = () => {
-    // router.push("/shop");
+    router.push("/shop");
   };
 
   return (
