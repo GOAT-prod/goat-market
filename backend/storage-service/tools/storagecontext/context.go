@@ -7,28 +7,32 @@ import (
 	"github.com/GOAT-prod/goatlogger"
 )
 
-type storageContext struct {
+type StorageContext struct {
 	ctx    context.Context
-	logger goatlogger.Logger
+	logger *goatlogger.Logger
 }
 
-func New() storageContext {
+func New() StorageContext {
 	logger := goatlogger.New(settings.GetAppName())
 
-	return storageContext{
+	return StorageContext{
 		ctx:    context.Background(),
-		logger: logger,
+		logger: &logger,
 	}
 }
 
-func (sc *storageContext) SetCtx(ctx context.Context) {
+func (sc *StorageContext) SetCtx(ctx context.Context) {
 	sc.ctx = ctx
 }
 
-func (sc *storageContext) Ctx() context.Context {
+func (sc *StorageContext) Ctx() context.Context {
 	return sc.ctx
 }
 
-func (sc *storageContext) Log() goatlogger.Logger {
+func (sc *StorageContext) Log() *goatlogger.Logger {
 	return sc.logger
+}
+
+func (sc *StorageContext) SetLogTag(tag string) {
+	sc.logger.SetTag(tag)
 }

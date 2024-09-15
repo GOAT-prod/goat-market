@@ -8,6 +8,7 @@ require (
 	github.com/jmoiron/sqlx v1.4.0
 	github.com/lib/pq v1.10.9
 	github.com/pressly/goose/v3 v3.22.0
+	github.com/samber/lo v1.47.0
 	github.com/shopspring/decimal v1.4.0
 	go.mongodb.org/mongo-driver v1.16.1
 )
