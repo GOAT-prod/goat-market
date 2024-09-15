@@ -16,7 +16,7 @@ export const Header = ({ className }: HeaderProps) => {
   return (
     <header className={cn("h-[var(--header-height)]", className)}>
       <Container className='flex h-full border border-border bg-background-secondary'>
-        <Link href='/' className='flex items-center gap-[10px] border-r border-border py-5 px-10 w-[var(--filters-width)]'>
+        <Link href='/' className='flex items-center gap-[10px] border-r border-border py-5 px-6 w-[var(--filters-width)]'>
           {/* <Truck strokeWidth={1.5} size={26} className="mt-0.5" /> */}
           <span className='text-2xl'>
             <strong>goat</strong> <span className='font-light'>logistic</span>
