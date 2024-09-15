@@ -1,7 +1,11 @@
 {
     "port": 80,
     "databases" : {
-        "mongo": "",
-        "postges": ""
+        "mongo": {
+            "connection" : "mongodb://localhost:27017",
+            "database": "logs",
+            "collection" : "storage-service"
+        },
+        "postgres": "postgres://postgres:postgres@localhost/storage-service?search_path=public&sslmode=disable"
     }
 }
