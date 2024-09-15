@@ -4,11 +4,11 @@ import { Title } from "../ui/title";
 export const Filters = () => {
   return (
     <>
-      <Title text='Фильтрация' size='sm' className='mb-5 font-bold' />
+      <Title text='Фильтрация' size='lg' className='mb-5 font-semibold' tag="h2" />
       <CheckboxFiltersGroup
         title='Обувь'
         name='shoes'
-        className='mb-5'
+        className='mb-10'
         // onClickCheckbox={filters.setPizzaTypes}
         // selected={filters.pizzaTypes}
         items={[
@@ -21,7 +21,7 @@ export const Filters = () => {
       <CheckboxFiltersGroup
         title='Бренды'
         name='shoes'
-        className='mb-5'
+        className='mb-10'
         // onClickCheckbox={filters.setPizzaTypes}
         // selected={filters.pizzaTypes}
         items={[
