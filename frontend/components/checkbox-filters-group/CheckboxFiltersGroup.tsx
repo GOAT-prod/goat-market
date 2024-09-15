@@ -2,9 +2,10 @@
 import { useState } from "react";
 import { Input } from "../ui/input";
 import { FilterCheckbox } from "../filter-checkbox/FilterCheckbox";
+import { Title } from "../ui/title";
 
 interface CheckboxFiltersGroupProps {
-  title?: string;
+  title: string;
   items: any[];
   defaultItems?: any[];
   limit?: number;
@@ -22,7 +23,7 @@ export const CheckboxFiltersGroup = ({
   items,
   defaultItems,
   limit = 5,
-  searchInputPlaceholder = "Поиск...",
+  searchInputPlaceholder = "Поиск",
   className,
   loading,
   onClickCheckbox,
@@ -52,13 +53,12 @@ export const CheckboxFiltersGroup = ({
 
   return (
     <div className={className}>
-      <p className='mb-3 font-bold'>{title}</p>
+      <Title className='mb-3' size="md" text={title} />
       {showAll && (
         <div className='mb-5'>
           <Input
             onChange={onChangeSearchInput}
             placeholder={searchInputPlaceholder}
-            className='bg-gray-5 border-none'
           />
         </div>
       )}
@@ -77,8 +77,8 @@ export const CheckboxFiltersGroup = ({
       </div>
 
       {items.length > limit && (
-        <div className={showAll ? "mt-4 border-t border-t-neutral-100" : ""}>
-          <button onClick={() => setShowAll(!showAll)} className='mt-3 text-primary'>
+        <div className={showAll ? "mt-4 border-t border-border" : ""}>
+          <button onClick={() => setShowAll(!showAll)} className='mt-3 text-primary text-[14px]'>
             {showAll ? "Скрыть" : "+ Показать все"}
           </button>
         </div>
