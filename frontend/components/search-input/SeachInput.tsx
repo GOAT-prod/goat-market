@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useClickOutside } from "@siberiacancode/reactuse";
 import { cn } from "@/lib/utils";
+import { Input } from "../ui/input";
 // import { Icon20Search } from '@vkontakte/icons';
 
 interface SeachInputProps {
@@ -19,22 +20,20 @@ export const SeachInput = ({ className }: SeachInputProps) => {
     <div
       ref={clickOutsideRef}
       className={cn(
-        `relative flex h-11 items-center gap-[10px] rounded-md border border-[#CBCBCB] px-[15px] py-[10px] ${focused ? "border-transparent" : "border-[#CBCBCB]"}`,
-        className
+        ""
+        // ${focused ? "border-transparent" : "border-[#CBCBCB]"}`,
+        // className
       )}
     >
-      {/* TODO попробовать label и html for  */}
       <label htmlFor='search-input'>{/* <Icon20Search /> */}</label>
-      <input
-        className='w-full outline-none'
+      <Input
+        // TODO магия ебать, полностью разобраться как это сделано
+        className={`h-8 rounded-md border bg-secondary py-[1px] pl-[8px] pr-[6px]`}
         placeholder='Поиск товаров'
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         id='search-input'
       />
-      {focused && (
-        <div className='pointer-events-none absolute inset-0 rounded-md border-[3px] border-primary-hover' />
-      )}
     </div>
   );
 };
