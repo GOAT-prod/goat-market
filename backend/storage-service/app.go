@@ -72,11 +72,10 @@ func (a *App) initDatabases() {
 func (a *App) initPostgres() {
 	a.postgres = sqlx.MustConnect("postgres", a.config.Databases.Postgres)
 
-	//TODO: не включать пока не будет миграций
-	//if err := database.RunMigrations(a.postgres, "./database/migrations"); err != nil {
-	//	a.logger.Panic(fmt.Sprintf("не удалось применить миграции, ошибка: %v", err))
-	//	os.Exit(1)
-	//}
+	if err := database.RunMigrations(a.postgres, "./database/migrations"); err != nil {
+		a.logger.Panic(fmt.Sprintf("не удалось применить миграции, ошибка: %v", err))
+		os.Exit(1)
+	}
 }
 
 func (a *App) initMongo() {
@@ -94,6 +93,13 @@ func (a *App) initMongo() {
 
 func (a *App) initRepositories() {
 	a.storageRepository = database.NewStorageRepository(a.postgres)
+
+	//TODO: при первом запуске локально расскоментировать, потом закоментировать иначе будут дубли
+	//if settings.GetEnv() == "local" {
+	//	if err := a.storageRepository.InsertForTest(); err != nil {
+	//		a.logger.Error(err.Error())
+	//	}
+	//}
 }
 
 func (a *App) initServices() {
