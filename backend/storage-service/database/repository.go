@@ -5,19 +5,19 @@ import (
 )
 
 type StorageRepository interface {
-	GetProduct()
+	GetDbProduct()
 }
 
 type StorageRepositoryImpl struct {
 	db *sqlx.DB
 }
 
-func NewStorageRepository(db *sqlx.DB) *StorageRepositoryImpl {
+func NewStorageRepository(db *sqlx.DB) StorageRepository {
 	return &StorageRepositoryImpl{
 		db: db,
 	}
 }
 
-func (r *StorageRepositoryImpl) GetProduct() {
+func (r *StorageRepositoryImpl) GetDbProduct() {
 
 }

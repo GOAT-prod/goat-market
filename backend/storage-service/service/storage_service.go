@@ -7,11 +7,15 @@ type StorageService interface {
 }
 
 type StorageServiceImpl struct {
-	repo *database.StorageRepository
+	repo database.StorageRepository
 }
 
-func NewStorageService(repos *database.StorageRepository) *StorageServiceImpl {
+func NewStorageService(repos database.StorageRepository) StorageService {
 	return &StorageServiceImpl{
 		repo: repos,
 	}
+}
+
+func (s *StorageServiceImpl) GetProduct() {
+
 }
