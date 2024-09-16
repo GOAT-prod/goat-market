@@ -20,7 +20,7 @@ export const Header = ({ className }: HeaderProps) => {
             <strong>goat</strong> <span className='font-light'>logistic</span>
           </span>
         </Link>
-        <div className='flex flex-1 items-center justify-between p-5'>
+        <div className='flex flex-1 items-center justify-between py-5 pl-6 pr-7'>
           <SeachInput className='flex-1' />
           <div className='flex items-center gap-2'>
             <Button size={'small'} className='flex gap-[10px]'>
