@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Combobox } from "@/components/ui/ComboBox";
 import { Title } from "@/components/ui/title";
 import { mockedProducts } from "@/server/mocks/mockedProducts";
-import { LayoutGrid, StretchHorizontal } from "lucide-react";
+import { LayoutGrid, List } from "lucide-react";
 import { Suspense, useMemo } from "react";
 
 export default function Shop() {
@@ -28,7 +28,7 @@ export default function Shop() {
                 <LayoutGrid className="h-[1.2rem] w-[1.2rem]" />
               </Button>
               <Button size={'icon'} variant={'secondary'}>
-                <StretchHorizontal className="h-[1.2rem] w-[1.2rem]" />
+                <List className="h-[1.2rem] w-[1.2rem]" />
               </Button>
             </div>
           </div>

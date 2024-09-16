@@ -781,9 +781,7 @@ export const mockedProducts: Products = {
       description: "Модные кроссовки с ретро-дизайном.",
       category: "Кроссовки",
       material: "Замша, текстиль",
-      images: [
-        "https://main-cdn.sbermegamarket.ru/big3/hlr-system/130/445/886/452/911/2/600018036400b0.jpg",
-      ],
+      images: ["https://i.imgur.com/qHp8fvQ.png"],
       rating: {
         rate: 4.7,
         feedback_count: 140,
@@ -804,9 +802,7 @@ export const mockedProducts: Products = {
       description: "Современные кроссовки с минималистичным дизайном.",
       category: "Кроссовки",
       material: "Текстиль, резина",
-      images: [
-        "https://main-cdn.sbermegamarket.ru/big3/hlr-system/805/770/081/732/32/100056357190b0.jpg",
-      ],
+      images: ["https://i.imgur.com/tQgDqot.png"],
       rating: {
         rate: 4.5,
         feedback_count: 125,
@@ -827,9 +823,7 @@ export const mockedProducts: Products = {
       description: "Кроссовки с поддержкой для пробежек на длинные дистанции.",
       category: "Кроссовки",
       material: "Текстиль, резина",
-      images: [
-        "https://main-cdn.sbermegamarket.ru/big3/hlr-system/-19/218/575/546/518/5/600018674882b0.jpg",
-      ],
+      images: ["https://i.imgur.com/zzuYI3R.png"],
       rating: {
         rate: 4.8,
         feedback_count: 118,
@@ -850,9 +844,7 @@ export const mockedProducts: Products = {
       description: "Модные кроссовки с акцентом на скорость.",
       category: "Кроссовки",
       material: "Текстиль, резина",
-      images: [
-        "https://main-cdn.sbermegamarket.ru/big3/hlr-system/474/289/832/411/519/600017130632b0.jpg",
-      ],
+      images: ["https://i.imgur.com/eo13YUT.png"],
       rating: {
         rate: 4.6,
         feedback_count: 105,
@@ -873,9 +865,7 @@ export const mockedProducts: Products = {
       description: "Классические кроссовки в спортивном стиле.",
       category: "Кроссовки",
       material: "Замша, текстиль",
-      images: [
-        "https://main-cdn.sbermegamarket.ru/big3/hlr-system/191/956/221/41/100065795616b0.JPG",
-      ],
+      images: ["https://i.imgur.com/FjVOkQ0.png"],
       rating: {
         rate: 4.7,
         feedback_count: 120,
@@ -897,9 +887,7 @@ export const mockedProducts: Products = {
         "Инновационные кроссовки с 4D-печатью для максимальной амортизации.",
       category: "Кроссовки",
       material: "Текстиль, резина",
-      images: [
-        "https://main-cdn.sbermegamarket.ru/big3/hlr-system/-48/538/805/782/514/40/600018304054b0.jpg",
-      ],
+      images: ["https://i.imgur.com/YrzUzZ3.png"],
       rating: {
         rate: 4.9,
         feedback_count: 135,
@@ -920,9 +908,7 @@ export const mockedProducts: Products = {
       description: "Модные кроссовки с ярким дизайном для города.",
       category: "Кроссовки",
       material: "Текстиль, резина",
-      images: [
-        "https://main-cdn.sbermegamarket.ru/big3/hlr-system/-19/159/770/881/232/6/100058881467b0.jpg",
-      ],
+      images: ["https://i.imgur.com/5AbcEuo.png"],
       rating: {
         rate: 4.6,
         feedback_count: 118,
@@ -944,9 +930,7 @@ export const mockedProducts: Products = {
         "Ультралегкие беговые кроссовки для марафона с максимальной скоростью.",
       category: "Кроссовки",
       material: "Текстиль, резина",
-      images: [
-        "https://main-cdn.sbermegamarket.ru/big3/hlr-system/-87/399/131/581/315/9/100058878996b0.jpg",
-      ],
+      images: ["https://i.imgur.com/AESFoUB.png"],
       rating: {
         rate: 4.8,
         feedback_count: 140,
