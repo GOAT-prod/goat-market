@@ -11,6 +11,29 @@
   }
 }
 
+/* Кастомизация скролл-бара */
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background: var(--background);
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #dbdadd;
+  border-radius: 6px;
+}
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #dbdadd;
+}
+
+/* Текст равномерно распределяться по строкам */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 /* Плавный скролл */
 html {
   scroll-behavior: smooth;
@@ -103,21 +126,6 @@ html {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
-
-.scrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-.scrollbar::-webkit-scrollbar-track {
-  border-radius: 6px;
-  background: #fff;
-}
-.scrollbar::-webkit-scrollbar-thumb {
-  background: #dbdadd;
-  border-radius: 6px;
-}
-.scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #dbdadd;
 }
 
 /* Текст равномерно распределяться по строкам */

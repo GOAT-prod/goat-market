@@ -10,9 +10,7 @@ export default async function Home() {
       <div className="absolute right-10 top-10">
         <ModeToggle />
       </div>
-      <div className="flex gap-4 rounded-lg border-2 border-border bg-background-secondary p-6 hover:border-border-hover">
-        <AuthForm />
-      </div>
+      <AuthForm />
     </div>
   );
 }

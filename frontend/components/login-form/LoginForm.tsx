@@ -28,7 +28,7 @@ type LoginFormTypes = "login" | "register_person" | "register_organization";
 
 export const AuthForm = () => {
   const [form, setForm] = useState<LoginFormTypes>("login");
-  const { formTitle, buttonText } = authFormConfig[form];
+  const { formTitle } = authFormConfig[form];
   const router = useRouter();
 
   const onChangeForm = (formType: LoginFormTypes) => {
@@ -40,18 +40,20 @@ export const AuthForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-5">
-      <div className="mb-10 flex flex-col items-center gap-3">
-        <h2 className="text-xl font-semibold">{formTitle}</h2>
-        {/* <h3 className='text-sm font-light'>Введите ваши данные</h3> */}
+    <div className="flex gap-4 rounded-lg border-2 border-border bg-background-secondary p-6 hover:border-border-hover">
+      <div className="flex flex-col items-center justify-center gap-5">
+        <div className="mb-10 flex flex-col items-center gap-3">
+          <h2 className="text-xl font-semibold">{formTitle}</h2>
+          {/* <h3 className='text-sm font-light'>Введите ваши данные</h3> */}
+        </div>
+        {form === "login" && (
+          <LoginForm onChangeForm={onChangeForm} onAuth={onAuth} />
+        )}
+        {form === "register_person" && <PersonForm onChangeForm={onChangeForm} />}
+        {form === "register_organization" && (
+          <OrganizationForm onChangeForm={onChangeForm} onAuth={onAuth} />
+        )}
       </div>
-      {form === "login" && (
-        <LoginForm onChangeForm={onChangeForm} onAuth={onAuth} />
-      )}
-      {form === "register_person" && <PersonForm onChangeForm={onChangeForm} />}
-      {form === "register_organization" && (
-        <OrganizationForm onChangeForm={onChangeForm} onAuth={onAuth} />
-      )}
     </div>
   );
 };
