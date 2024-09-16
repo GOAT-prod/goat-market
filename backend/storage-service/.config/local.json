@@ -6,6 +6,6 @@
             "database": "logs",
             "collection" : "storage-service"
         },
-        "postgres": "postgres://postgres:postgres@localhost/storage-service?search_path=public&sslmode=disable"
+        "postgres": "postgres://default:NlS53IqFXjmP@ep-snowy-scene-a2dmlrbf.eu-central-1.aws.neon.tech:5432/verceldb?sslmode=require"
     }
 }

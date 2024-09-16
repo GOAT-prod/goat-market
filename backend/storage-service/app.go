@@ -4,10 +4,6 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/GOAT-prod/goatlogger"
-	"github.com/jmoiron/sqlx"
-	_ "github.com/lib/pq"
-	"go.mongodb.org/mongo-driver/mongo"
 	"net/http"
 	"os"
 	"storage-service/api"
@@ -15,6 +11,11 @@ import (
 	"storage-service/service"
 	"storage-service/settings"
 	"time"
+
+	"github.com/GOAT-prod/goatlogger"
+	"github.com/jmoiron/sqlx"
+	_ "github.com/lib/pq"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 type App struct {
