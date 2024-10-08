@@ -1,19 +1,24 @@
-import { Header } from "@/components/header/Header";
-import { Metadata } from "next";
+import { Container } from '@/components/container/Container';
+import { Header } from '@/components/header/Header';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Авторизация"
+  title: 'Авторизация',
 };
 
 export default function ShopLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <div>
       <Header />
-      {children}
+      <Container>
+        <main className="h-[calc(100vh-var(--header-height))] border border-border border-t-0 flex">
+          {children}
+        </main >
+      </Container>
     </div>
   );
 }

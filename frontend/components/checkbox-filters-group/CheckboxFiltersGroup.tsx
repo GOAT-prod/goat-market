@@ -1,8 +1,8 @@
-"use client";
-import { useState } from "react";
-import { Input } from "../ui/input";
-import { FilterCheckbox } from "../filter-checkbox/FilterCheckbox";
-import { Title } from "../ui/title";
+'use client';
+import { useState } from 'react';
+import { FilterCheckbox } from '../filter-checkbox/FilterCheckbox';
+import { Input } from '../ui/input';
+import { Title } from '../ui/title';
 
 interface CheckboxFiltersGroupProps {
   title: string;
@@ -23,15 +23,15 @@ export const CheckboxFiltersGroup = ({
   items,
   defaultItems,
   limit = 5,
-  searchInputPlaceholder = "Поиск",
+  searchInputPlaceholder = 'Поиск',
   className,
   loading,
   onClickCheckbox,
   selected,
-  name
+  name,
 }: CheckboxFiltersGroupProps) => {
   const [showAll, setShowAll] = useState(false);
-  const [term, setTeam] = useState("");
+  const [term, setTeam] = useState('');
 
   const list = showAll
     ? items.filter(({ text }) => text.toLowerCase().includes(term))
@@ -53,16 +53,13 @@ export const CheckboxFiltersGroup = ({
 
   return (
     <div className={className}>
-      <Title className='mb-3' size="md" text={title} />
+      <Title className="mb-3" size="md" text={title} />
       {showAll && (
-        <div className='mb-5'>
-          <Input
-            onChange={onChangeSearchInput}
-            placeholder={searchInputPlaceholder}
-          />
+        <div className="mb-5">
+          <Input onChange={onChangeSearchInput} placeholder={searchInputPlaceholder} />
         </div>
       )}
-      <div className='scrollbar flex max-h-96 flex-col gap-4 overflow-auto pr-2'>
+      <div className="scrollbar flex max-h-96 flex-col gap-4 overflow-auto pr-2">
         {list.map((item, index) => (
           <FilterCheckbox
             key={index}
@@ -77,9 +74,9 @@ export const CheckboxFiltersGroup = ({
       </div>
 
       {items.length > limit && (
-        <div className={showAll ? "mt-4 border-t border-border" : ""}>
-          <button onClick={() => setShowAll(!showAll)} className='mt-3 text-primary text-[14px]'>
-            {showAll ? "Скрыть" : "+ Показать все"}
+        <div className={showAll ? 'mt-4 border-t border-border' : ''}>
+          <button onClick={() => setShowAll(!showAll)} className="mt-3 text-primary text-[14px]">
+            {showAll ? 'Скрыть' : '+ Показать все'}
           </button>
         </div>
       )}

@@ -1,16 +1,26 @@
-import { ProductCard } from "../product-card/ProductCard";
+'use client';
+import { useRouter } from 'next/navigation';
+import { ProductCard } from '../product-card/ProductCard';
 
-interface ProductsProps {
-    products: Product[]
+interface CatalogProps {
+  products: Product[];
 }
 
-export const Products = ({ products }: ProductsProps) => {
+export const Catalog = ({ products }: CatalogProps) => {
+  const router = useRouter();
 
-    return (
-        <div className="grid grid-cols-4 gap-[24px] p-[24px] pt-0">
-            {products.map((product, index) =>
-                <div key={index}><ProductCard product={product} /></div>
-            )}
+  const onRedirectToProduct = (product: Product) => {
+    router.push(`/shop/${product.id}`)
+  }
+
+
+  return (
+    <div className="grid grid-cols-4 gap-[24px] p-[24px] pt-0">
+      {products.map((product, index) => (
+        <div key={index}>
+          <ProductCard product={product} onClick={() => onRedirectToProduct(product)} />
         </div>
-    );
-}
+      ))}
+    </div>
+  );
+};

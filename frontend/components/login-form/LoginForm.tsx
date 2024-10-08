@@ -1,33 +1,33 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import next from "next";
-import { useRouter } from "next/navigation";
-import { Button } from "../ui/button";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { cn } from "@/lib/utils";
+import { useState } from 'react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import next from 'next';
+import { useRouter } from 'next/navigation';
+import { Button } from '../ui/button';
+import { Label } from '../ui/label';
+import { Input } from '../ui/input';
+import { cn } from '@/lib/utils';
 
 const authFormConfig = {
   login: {
-    formTitle: "Вход",
-    buttonText: "Войти",
+    formTitle: 'Вход',
+    buttonText: 'Войти',
   },
   register_person: {
-    formTitle: "Регистрация",
-    buttonText: "Зарегистрироваться",
+    formTitle: 'Регистрация',
+    buttonText: 'Зарегистрироваться',
   },
   register_organization: {
-    formTitle: "Регистрация",
-    buttonText: "Зарегистрироваться",
+    formTitle: 'Регистрация',
+    buttonText: 'Зарегистрироваться',
   },
 };
 
-type LoginFormTypes = "login" | "register_person" | "register_organization";
+type LoginFormTypes = 'login' | 'register_person' | 'register_organization';
 
 export const AuthForm = () => {
-  const [form, setForm] = useState<LoginFormTypes>("login");
+  const [form, setForm] = useState<LoginFormTypes>('login');
   const { formTitle } = authFormConfig[form];
   const router = useRouter();
 
@@ -36,7 +36,7 @@ export const AuthForm = () => {
   };
 
   const onAuth = () => {
-    router.push("/shop");
+    router.push('/shop');
   };
 
   return (
@@ -46,13 +46,9 @@ export const AuthForm = () => {
           <h2 className="text-xl font-semibold">{formTitle}</h2>
           {/* <h3 className='text-sm font-light'>Введите ваши данные</h3> */}
         </div>
-        {form === "login" && (
-          <LoginForm onChangeForm={onChangeForm} onAuth={onAuth} />
-        )}
-        {form === "register_person" && <PersonForm onChangeForm={onChangeForm} />}
-        {form === "register_organization" && (
-          <OrganizationForm onChangeForm={onChangeForm} onAuth={onAuth} />
-        )}
+        {form === 'login' && <LoginForm onChangeForm={onChangeForm} onAuth={onAuth} />}
+        {form === 'register_person' && <PersonForm onChangeForm={onChangeForm} />}
+        {form === 'register_organization' && <OrganizationForm onChangeForm={onChangeForm} onAuth={onAuth} />}
       </div>
     </div>
   );
@@ -67,24 +63,10 @@ const LoginForm = ({ onChangeForm, onAuth }: LoginFormProps) => {
   return (
     <>
       <InputForm name="Email" type="email" placeholder="Введите почту" />
-      <InputForm
-        name="Пароль"
-        type="password"
-        placeholder="Введите пароль"
-        className="mb-5"
-      />
+      <InputForm name="Пароль" type="password" placeholder="Введите пароль" className="mb-5" />
       <div className="flex flex-col gap-5">
-        <Button
-          type="submit"
-          variant={"secondary"}
-          onClick={onAuth}
-          text="Войти"
-        />
-        <a
-          href="#"
-          className="text-sm hover:underline"
-          onClick={() => onChangeForm("register_person")}
-        >
+        <Button type="submit" variant={'secondary'} onClick={onAuth} text="Войти" />
+        <a href="#" className="text-sm hover:underline" onClick={() => onChangeForm('register_person')}>
           Регистрация
         </a>
       </div>
@@ -97,25 +79,16 @@ const PersonForm = ({ onChangeForm }: LoginFormProps) => {
     <>
       <InputForm name="Email" type="email" placeholder="Введите почту" />
       <InputForm name="Имя" type="text" placeholder="Введите имя" />
-      <InputForm
-        name="Пароль"
-        type="password"
-        placeholder="Введите пароль"
-        className="mb-5"
-      />
+      <InputForm name="Пароль" type="password" placeholder="Введите пароль" className="mb-5" />
 
       <div className="flex w-full items-center justify-between">
-        <Button
-          type="button"
-          onClick={() => onChangeForm("login")}
-          variant={"secondary"}
-        >
+        <Button type="button" onClick={() => onChangeForm('login')} variant={'secondary'}>
           <ArrowLeft size={20} />
         </Button>
         <Button
           type="button"
-          onClick={() => onChangeForm("register_organization")}
-          variant={"secondary"}
+          onClick={() => onChangeForm('register_organization')}
+          variant={'secondary'}
           text="Ваша организация"
           suffix={<ArrowRight size={20} />}
         />
@@ -127,33 +100,15 @@ const PersonForm = ({ onChangeForm }: LoginFormProps) => {
 const OrganizationForm = ({ onChangeForm, onAuth }: LoginFormProps) => {
   return (
     <>
-      <InputForm
-        name="Название организации"
-        type="email"
-        placeholder="Введите название организации"
-      />
+      <InputForm name="Название организации" type="email" placeholder="Введите название организации" />
       <InputForm name="ИНН" type="text" placeholder="Введите ИНН организации" />
-      <InputForm
-        name="Адрес"
-        type="text"
-        placeholder="Введите адрес организации"
-        className="mb-5"
-      />
+      <InputForm name="Адрес" type="text" placeholder="Введите адрес организации" className="mb-5" />
 
       <div className="flex w-full items-center justify-between">
-        <Button
-          type="button"
-          onClick={() => onChangeForm("register_person")}
-          variant={"secondary"}
-        >
+        <Button type="button" onClick={() => onChangeForm('register_person')} variant={'secondary'}>
           <ArrowLeft size={20} />
         </Button>
-        <Button
-          type="button"
-          variant={"secondary"}
-          text="Зарегистрироваться"
-          onClick={onAuth}
-        />
+        <Button type="button" variant={'secondary'} text="Зарегистрироваться" onClick={onAuth} />
       </div>
     </>
   );
@@ -167,14 +122,9 @@ interface InputFormProps {
 }
 const InputForm = ({ name, type, placeholder, className }: InputFormProps) => {
   return (
-    <div className={cn("grid w-full max-w-sm items-center gap-2.5", className)}>
+    <div className={cn('grid w-full max-w-sm items-center gap-2.5', className)}>
       <Label htmlFor={`${name}__${type}`}>{name}</Label>
-      <Input
-        type={type}
-        id={`${name}__${type}`}
-        placeholder={placeholder}
-        className="h-10 w-[300px] px-3"
-      />
+      <Input type={type} id={`${name}__${type}`} placeholder={placeholder} className="h-10 w-[300px] px-3" />
     </div>
   );
 };

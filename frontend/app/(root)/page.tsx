@@ -1,5 +1,5 @@
-import { AuthForm } from "@/components/login-form/LoginForm";
-import { ModeToggle } from "@/components/toggleTheme/ToggleTheme";
+import { AuthForm } from '@/components/login-form/LoginForm';
+import { ModeToggle } from '@/components/toggleTheme/ToggleTheme';
 
 export default async function Home() {
   return (
