@@ -1,6 +1,7 @@
 import { BreadcrumbDemo } from "@/components/breadcrumb-demo/BreadcrumbDemo";
 import { CatalogItem } from "@/components/catalog-item/CatalogItem";
 import { ShopContainer } from "@/components/shop-container/ShopContainer";
+import { ShopVariants } from "@/components/shop-variants/ShopVariants";
 import { mockedProducts } from "@/server/mocks/mockedProducts";
 import { Suspense, useMemo } from "react";
 
@@ -13,7 +14,8 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     <>
       <aside className="w-[var(--filters-width)] py-4 px-6 border-r h-full border-border ">
         <Suspense>
-          {/* <Filters /> */}
+
+          <ShopVariants />
         </Suspense>
       </aside>
       <ShopContainer headerTitle="Товар" headerDetails={<BreadcrumbDemo />}>

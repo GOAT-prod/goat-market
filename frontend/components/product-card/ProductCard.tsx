@@ -6,44 +6,44 @@ import { Button } from '../ui/button';
 import { Title } from '../ui/title';
 
 interface ProductCardProps {
-  product: Product;
-  onClick?: () => void;
+    product: Product;
+    onClick?: () => void;
 }
 
 export const ProductCard = ({ product, onClick }: ProductCardProps) => {
-  return (
-    <>
-      <ProductCardLayout onClick={onClick}>
-        <ProductCardHeader className="w-full h-full  ">
-          <img src={product.images[0]} alt="Карточка товара" />
-        </ProductCardHeader>
-        <ProductCardContent>
-          <ProductCardTitle>{product.name}</ProductCardTitle>
-        </ProductCardContent>
-        <ProductCardFooter className="flex justify-between items-center">
-          <Title size="md" text={`${product.price} ₽`} />
-          <Button size="small">Заказать</Button>
-        </ProductCardFooter>
-      </ProductCardLayout>
-    </>
-  );
+    return (
+        <>
+            <ProductCardLayout onClick={onClick}>
+                <ProductCardHeader className="w-full h-full  ">
+                    <img src={product.images[0]} alt="Карточка товара" />
+                </ProductCardHeader>
+                <ProductCardContent>
+                    <ProductCardTitle>{product.name}</ProductCardTitle>
+                </ProductCardContent>
+                <ProductCardFooter className="flex justify-between items-center">
+                    <Title size="md" text={`${product.price} ₽`} />
+                    <Button size="small">Заказать</Button>
+                </ProductCardFooter>
+            </ProductCardLayout>
+        </>
+    );
 };
 
 const ProductCardLayout = Card;
 
 const ProductCardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => <div ref={ref} className={cn('', className)} {...props} />,
+    ({ className, ...props }, ref) => <div ref={ref} className={cn('', className)} {...props} />,
 );
 ProductCardContent.displayName = 'ProductCardContent';
 
 const ProductCardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn('bg-white justify-end overflow-hidden rounded-md flex flex-col', className)}
-      {...props}
-    />
-  ),
+    ({ className, ...props }, ref) => (
+        <div
+            ref={ref}
+            className={cn('bg-white justify-end overflow-hidden rounded-md flex flex-col', className)}
+            {...props}
+        />
+    ),
 );
 CardHeader.displayName = 'CardHeader';
 
@@ -54,10 +54,10 @@ const ProductCardDescription = CardDescription;
 const ProductCardFooter = CardFooter;
 
 export {
-  ProductCardLayout,
-  ProductCardHeader,
-  ProductCardTitle,
-  ProductCardDescription,
-  ProductCardFooter,
-  ProductCardContent,
+    ProductCardLayout,
+    ProductCardHeader,
+    ProductCardTitle,
+    ProductCardDescription,
+    ProductCardFooter,
+    ProductCardContent,
 };
