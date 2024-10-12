@@ -1,9 +1,7 @@
-'use client'
 import { ProductVariantsContainer, } from '../variant-accordion/VariantAccordion';
 import { Accordion } from '@/components/ui/accordion';
-import { Button } from '@/components/ui/button';
 import { Title } from '@/components/ui/title';
-import { createContext, useEffect, useState } from 'react';
+import { useMemo } from 'react';
 
 export type ProductVarinats = {
     colors?: string[],
@@ -11,12 +9,19 @@ export type ProductVarinats = {
 }
 
 interface ProductVariantsProps {
-    variants: ProductVarinats
+    productItems: ProductItem[]
     className?: string;
 }
 
 
-export const ProductVariants = ({ variants: { colors, sizes } }: ProductVariantsProps) => {
+export const ProductVariants = ({ productItems }: ProductVariantsProps) => {
+
+    const colors = productItems.map((item) => item.color)
+    const sizes = productItems.map((item) => item.size)
+
+    console.log(colors)
+    console.log(sizes)
+
 
     return (<div className="flex flex-col gap-6">
         <Title text="Варианты" size="lg" className="font-semibold" tag="h2" />

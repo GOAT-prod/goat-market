@@ -1,5 +1,5 @@
 interface Product {
-  id: string;
+  id: int;
   name:	string;
   description:	string;
   brand: Brand;
@@ -20,7 +20,6 @@ interface Factory {
   name: string;
   city: string;
   country: string;
-  // TODO* фикс на Address
   address: string;
 }
 

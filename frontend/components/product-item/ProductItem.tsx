@@ -22,7 +22,7 @@ export const ProductItem = ({ product }: CatalogItemProps) => {
           <Title size="lg" text={product.name} className="font-medium" />
         </div>
         <div className="p-6 flex flex-col gap-4 bg-background-secondary rounded-lg border-[1.5px] border-border">
-          <Title size="2xl" text={`${product.price} ₽`} className="font-semibold" />
+          <Title size="2xl" text={`${product.price} $`} className="font-semibold" />
           <Button size={'large'} className="w-[160px]">Добавить в заказ</Button>
           <div className="text-sm">
             <div className="flex gap-[15px] ">
@@ -36,6 +36,6 @@ export const ProductItem = ({ product }: CatalogItemProps) => {
           </div>
         </div>
       </div>
-    </div >
+    </ div>
   )
 }
