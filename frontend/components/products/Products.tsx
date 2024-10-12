@@ -1,17 +1,27 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { ProductCard } from '../product-card/ProductCard';
+import { useQuery } from '@tanstack/react-query';
 
 interface CatalogProps {
   products: Product[];
 }
 
-export const Catalog = ({ products }: CatalogProps) => {
+export const ProductsCatalog = ({ products }: CatalogProps) => {
   const router = useRouter();
 
   const onRedirectToProduct = (product: Product) => {
     router.push(`/shop/${product.id}`)
   }
+
+  // react query
+  // 1. intialData
+  // 'use client'
+  // const { data, error, isFetched } = useQuery({
+  //   queryKey: ['products'],
+  //   queryFn: getProducts,
+  //   initialData: products
+  // })
 
 
   return (

@@ -5,7 +5,7 @@ interface CatalogItemProps {
   product: Product;
 }
 
-export const CatalogItem = ({ product }: CatalogItemProps) => {
+export const ProductItem = ({ product }: CatalogItemProps) => {
   return (
     <div className="px-6 pb-6 flex gap-6">
       <div className="w-[55.2%]">

@@ -1,12 +1,29 @@
 import { CatalogSettings } from '@/components/catalog-settings/CatalogSettings';
 import { Filters } from '@/components/filters/Filters';
-import { Catalog } from '@/components/products/Products';
-import { ShopContainer } from '@/components/shop-container/ShopContainer';
+import { ProductsCatalog } from '@/components/products/Products';
+import { ProductsContainer } from '@/components/shop-container/ShopContainer';
 import { mockedProducts } from '@/server/mocks/mockedProducts';
+import { HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import { Suspense, useMemo } from 'react';
 
 export default function Shop() {
   const products = useMemo(() => mockedProducts.items.slice(0, 36), []);
+  // 2.hydrate
+  // const queryClient = new QueryClient();
+  // await queryClient.prefetchQuery({
+  //   queryKey: ['products'],
+  //   queryFn: getProducts,
+  // });
+  // <HydrationBoundary state={dehydrate(queryClient)}>
+  //   <ProductsCatalog />
+  // </HydrationBoundary>
+  // внутри ProductsCatalog:
+  // const { data, error, isFetched } = useQuery({
+  //   queryKey: ['products'],
+  //   queryFn: getProducts,
+  // })
+  // https://dev.to/logrocket/using-tanstack-query-with-nextjs-5bdo
+  // https://tanstack.com/query/latest/docs/framework/react/guides/advanced-ssr
 
   return (
     <>
@@ -16,9 +33,9 @@ export default function Shop() {
           <Filters />
         </Suspense>
       </aside>
-      <ShopContainer headerTitle={'Товары'} headerDetails={<CatalogSettings />}>
-        <Catalog products={products} />
-      </ShopContainer>
+      <ProductsContainer headerTitle={'Товары'} headerDetails={<CatalogSettings />}>
+        <ProductsCatalog products={products} />
+      </ProductsContainer>
     </>
   );
 }

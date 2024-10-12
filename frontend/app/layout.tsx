@@ -3,6 +3,7 @@ import { GeistSans } from 'geist/font/sans';
 import './globals.css';
 import { ThemeProvider } from '@/providers/ThemeProviders';
 import { cn } from '@/lib/utils';
+import Provider from '@/providers/Providers';
 
 export const metadata: Metadata = {
   title: 'goat logistic',
@@ -18,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(GeistSans.className, 'h-screen bg-background')}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {children}
+          <Provider>{children}</Provider>
         </ThemeProvider>
       </body>
     </html>

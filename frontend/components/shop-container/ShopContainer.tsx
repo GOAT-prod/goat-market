@@ -7,7 +7,7 @@ interface ShopContainerProps {
   headerTitle: string;
 }
 
-export const ShopContainer = ({ children, headerDetails, headerTitle }: ShopContainerProps) => {
+export const ProductsContainer = ({ children, headerDetails, headerTitle }: ShopContainerProps) => {
   return (
     <section className="flex-1 h-full pb-[16px] overflow-y-auto scrollbar">
       <div className="flex w-full sticky top-0  bg-background py-[16px]  shadow-black/5 px-[24px]">
@@ -20,3 +20,5 @@ export const ShopContainer = ({ children, headerDetails, headerTitle }: ShopCont
     </section>
   )
 };
+
+export const ProductContainer = ProductsContainer;

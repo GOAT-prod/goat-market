@@ -13,7 +13,7 @@ interface ProductCardProps {
 export const ProductCard = ({ product, onClick }: ProductCardProps) => {
     return (
         <>
-            <ProductCardLayout onClick={onClick}>
+            <ProductCardLayout onClick={onClick} className='cursor-pointer'>
                 <ProductCardHeader className="w-full h-full  ">
                     <img src={product.images[0]} alt="Карточка товара" />
                 </ProductCardHeader>
