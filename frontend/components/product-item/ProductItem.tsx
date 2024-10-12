@@ -11,14 +11,14 @@ export const ProductItem = ({ product }: CatalogItemProps) => {
       <div className="w-[55.2%]">
         {/* Картинка */}
         <div className="bg-background-secondary p-6 rounded-lg border-[1.5px] border-border">
-          <img src={product.images[0]} alt="Карточка товара" className="rounded-md" />
+          <img src={product.images[0].imageUrl} alt="Карточка товара" className="rounded-md" />
         </div>
         {/* Табличка */}
         <div></div>
       </div>
       <div className="flex-1 flex flex-col gap-6 pt-6">
         <div>
-          <Title tag="h1" size="2xl" text={product.brand} className="mb-4 font-semibold leading-7" />
+          <Title tag="h1" size="2xl" text={product.brand.name} className="mb-4 font-semibold leading-7" />
           <Title size="lg" text={product.name} className="font-medium" />
         </div>
         <div className="p-6 flex flex-col gap-4 bg-background-secondary rounded-lg border-[1.5px] border-border">

@@ -18,7 +18,7 @@ export const ProductVariantsContainer = ({ className, title, items, }: ProductVa
             <AccordionContent>
                 <RadioGroup defaultValue={items[0]} >
                     {items.map((item, index) => {
-                        return <ProductVariant id={`${item} ${index}`} text={item} />
+                        return <ProductVariant id={`${item} ${index}`} text={item} key={`${item} ${index}`} />
                     })}
                 </RadioGroup>
             </AccordionContent>

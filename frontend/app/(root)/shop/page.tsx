@@ -2,12 +2,9 @@ import { CatalogSettings } from '@/components/catalog-settings/CatalogSettings';
 import { Filters } from '@/components/filters/Filters';
 import { ProductsCatalog } from '@/components/products/Products';
 import { ProductsContainer } from '@/components/shop-container/ShopContainer';
-import { mockedProducts } from '@/server/mocks/mockedProducts';
-import { HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import { Suspense, useMemo } from 'react';
 
-export default function Shop() {
-  const products = useMemo(() => mockedProducts.items.slice(0, 36), []);
+export default async function Shop() {
   // 2.hydrate
   // const queryClient = new QueryClient();
   // await queryClient.prefetchQuery({
@@ -34,7 +31,7 @@ export default function Shop() {
         </Suspense>
       </aside>
       <ProductsContainer headerTitle={'Товары'} headerDetails={<CatalogSettings />}>
-        <ProductsCatalog products={products} />
+        <ProductsCatalog />
       </ProductsContainer>
     </>
   );

@@ -28,7 +28,6 @@ export function RadioGroupForm() {
   })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data)
     toast({
       title: "You submitted the following values:",
       description: (

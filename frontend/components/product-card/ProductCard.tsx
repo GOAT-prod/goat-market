@@ -15,13 +15,13 @@ export const ProductCard = ({ product, onClick }: ProductCardProps) => {
         <>
             <ProductCardLayout onClick={onClick} className='cursor-pointer'>
                 <ProductCardHeader className="w-full h-full  ">
-                    <img src={product.images[0]} alt="Карточка товара" />
+                    <img src={product.images[0].imageUrl} alt="Карточка товара" />
                 </ProductCardHeader>
                 <ProductCardContent>
                     <ProductCardTitle>{product.name}</ProductCardTitle>
                 </ProductCardContent>
                 <ProductCardFooter className="flex justify-between items-center">
-                    <Title size="md" text={`${product.price} ₽`} />
+                    <Title size="md" text={`${product.price} $`} />
                     <Button size="small">Заказать</Button>
                 </ProductCardFooter>
             </ProductCardLayout>

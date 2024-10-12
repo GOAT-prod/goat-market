@@ -2,12 +2,12 @@
 import { useRouter } from 'next/navigation';
 import { ProductCard } from '../product-card/ProductCard';
 import { useQuery } from '@tanstack/react-query';
+import { getProducts } from '@/app/(services)/products';
+import { SkeletonCard } from '../skeleton-card/SkeletonCars';
 
-interface CatalogProps {
-  products: Product[];
-}
 
-export const ProductsCatalog = ({ products }: CatalogProps) => {
+
+export const ProductsCatalog = () => {
   const router = useRouter();
 
   const onRedirectToProduct = (product: Product) => {
@@ -17,16 +17,17 @@ export const ProductsCatalog = ({ products }: CatalogProps) => {
   // react query
   // 1. intialData
   // 'use client'
-  // const { data, error, isFetched } = useQuery({
-  //   queryKey: ['products'],
-  //   queryFn: getProducts,
-  //   initialData: products
-  // })
-
+  const { data, error, isLoading } = useQuery({
+    queryKey: ['products'],
+    queryFn: getProducts,
+  })
 
   return (
     <div className="grid grid-cols-4 gap-[24px] p-[24px] pt-0">
-      {products.map((product, index) => (
+      {isLoading && Array(12).fill(0).map((item) => {
+        return <SkeletonCard />
+      })}
+      {data?.map((product, index) => (
         <div key={index}>
           <ProductCard product={product} onClick={() => onRedirectToProduct(product)} />
         </div>

@@ -4,14 +4,20 @@ const BASE = 'https://storage-service-production.up.railway.app'
 
 // https://storage-service-production.up.railway.app/products?limit=5&page=0
 
-// export async function fetchTodos() {
+export async function getProducts() : Promise<Product[]>{
+  const res = await fetch(`${BASE}/products?limit=5&page=0`, {
+        'headers': {
+            'Authorization': process.env.NEXT_PUBLIC_X_API_KEY! ,
+        }
+    }
+  )
+  
 
-//   const res = await fetch(`${BASE}/${queries}`)
+//   const res = await fetch(`${BASE}/ping`)
+//   console.log(process.env.X_API_KEY)
+  return res.json()
+}
 
-//   if (!res.ok) throw new Error('Failed to fetch todos!')
-
-//   return res.json()
-// }
 
 // export async function toggleTodoStatus(todoId: number, completed: boolean) {
 //   const res = await fetch(`${BASE}/${todoId}`, {
